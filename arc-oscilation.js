@@ -16,12 +16,10 @@ class ArcOscilation {
     }
 
     updateTickness() {
-        if (this.t === minThickness && this.tMod < 0) {
+        if (this.t === minThickness && this.tMod < 0)
             this.tMod = 1;
-        }
-        if (this.t === maxThickness && this.tMod > 0) {
+        else if (this.t === maxThickness && this.tMod > 0)
             this.tMod = -1;
-        }
         this.t += this.tMod;
     }
 }

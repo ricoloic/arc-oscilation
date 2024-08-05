@@ -1,7 +1,7 @@
-var maxThickness = 20;
+var maxThickness = 5;
 var minThickness = 1;
 const arcOscilationList = [];
-const space = 50;
+const space = 200;
 
 function setup() {
     createCanvas(window.innerWidth - 30, window.innerHeight - 30);
