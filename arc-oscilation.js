@@ -15,11 +15,11 @@ class ArcOscilation {
         arc(this.x, this.y, this.w, this.h, this.start, this.end);
     }
 
-    updateTickness() {
-        if (this.t === minThickness && this.tMod < 0)
-            this.tMod = 1;
-        else if (this.t === maxThickness && this.tMod > 0)
-            this.tMod = -1;
+    update() {
+        if (this.t <= minThickness && this.tMod < 0)
+            this.tMod = speedBlack;
+        else if (this.t >= maxThickness && this.tMod > 0)
+            this.tMod = -speedWhite;
         this.t += this.tMod;
     }
 }

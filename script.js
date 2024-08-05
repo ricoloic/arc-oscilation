@@ -1,7 +1,9 @@
-var maxThickness = 5;
-var minThickness = 1;
+var maxThickness = 15;
+var minThickness = 5;
+var speedWhite = 1.2;
+var speedBlack = 0.9;
 const arcOscilationList = [];
-const space = 200;
+const space = 100;
 
 function setup() {
     createCanvas(window.innerWidth - 30, window.innerHeight - 30);
@@ -27,7 +29,7 @@ function draw() {
 
     for (const arcOscilation of arcOscilationList) {
         arcOscilation.draw();
-        arcOscilation.updateTickness();
+        arcOscilation.update();
     }
 }
 
@@ -38,9 +40,9 @@ function createColumn(x, d, t) {
 
     const spaceOffset = space + maxThickness;
 
-    for (let i = 0; i < (height - (spaceOffset)) / maxThickness; i++) {
+    for (let i = 0; i < (height - (spaceOffset)) / (maxThickness - 2); i++) {
         const arcOscilation = new ArcOscilation(
-            x, i * maxThickness + spaceOffset / 2,
+            x, i * (maxThickness - 2) + spaceOffset / 2,
             space, space,
             d,
             thickness
